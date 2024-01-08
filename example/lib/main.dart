@@ -234,7 +234,7 @@ showAlertDialog(BuildContext context) {
 }
 
 showDevelopDialog(BuildContext context) {
-  YYDialog yyDialog;
+  late YYDialog yyDialog;
 
   return Padding(
     padding: EdgeInsets.all(8.0),
@@ -259,7 +259,7 @@ showDevelopDialog(BuildContext context) {
                                 yyDialog = YYAlertDialogBody();
                               }),
                               makeTextButton("dismiss", () {
-                                yyDialog?.dismiss();
+                                yyDialog.dismiss();
                               }),
                             ],
                           ),
@@ -280,8 +280,7 @@ Widget makeTextButton(title, Function() function) {
   return SizedBox(
     width: 65.0,
     height: 35.0,
-    child: RaisedButton(
-      padding: EdgeInsets.all(0.0),
+    child: ElevatedButton(
       onPressed: () {
         function();
       },
